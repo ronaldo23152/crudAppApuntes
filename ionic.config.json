@@ -1,0 +1,7 @@
+{
+  "name": "lab12crud",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

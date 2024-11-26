@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>  <!-- Botón de retroceso -->
+    </ion-buttons>
+
+    <ion-title> Agregar Nota</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form (ngSubmit)="confirmNote()">
+    <ion-item>
+      <ion-label position="floating">Título</ion-label>
+      <ion-input [(ngModel)]="title" name="title" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Mensaje</ion-label>
+      <ion-textarea [(ngModel)]="message" name="message" required></ion-textarea>
+    </ion-item>
+
+    <ion-button expand="full" type="submit">
+      <ion-icon slot="start" name="checkmark-outline"></ion-icon>
+      Confirmar
+    </ion-button>
+  </form>
+</ion-content>

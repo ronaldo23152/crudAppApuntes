@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+    <ion-title>Notas</ion-title>
+
+
+ <!-- Botón de salirse -->
+ <ion-button slot = "end" (click)="onLogout()">
+  <ion-icon name="log-out-outline"></ion-icon>
+</ion-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ 
+  <!-- Botón flotante para agregar nota -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/add-note">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- Lista de Notas -->
+  <ion-list>
+    <ion-item-sliding *ngFor="let note of notes">
+      <ion-item>
+        <ion-label>
+          <h2>{{ note.title }}</h2>
+          <p>{{ note.message }}</p>
+        </ion-label>
+      </ion-item>
+
+      <!-- Opciones deslizables -->
+      <ion-item-options side="start">
+        <ion-item-option color="tertiary" routerLink="/edit-note/{{note.id}}">
+          <ion-icon name="create-outline" slot="icon-only"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
